@@ -78,8 +78,8 @@ http://localhost:5000/player-info?uid=1844109412
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/freefire-api.git
-cd freefire-api
+git clone https://github.com/ashishyadav210/FF-UID-TO-INFO-API.git
+cd FF-UID-TO-INFO-API
 ```
 
 ### 2️⃣ Install Requirements
@@ -113,28 +113,6 @@ ENTER YOU GUEST ACCOUNT UID
 ENTER YOUR GUEST ACCOUNT PASSWORD
 ```
 
----
-
-## 🧠 Important Understanding
-
-- ✔️ UID = Player ID  
-- ❌ Nickname / Account Name use mat karo  
-- ✔️ Sirf valid Free Fire UID hi kaam karegi  
-
-### 📌 Example
-
-```
-uid=1844109412   ✅ Correct
-nickname         ❌ Wrong
-```
-
----
-
-## 🔄 ♻️ Token Refresh Endpoint
-
-```
-/refresh
-```
 
 ---
 
