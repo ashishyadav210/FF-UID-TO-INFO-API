@@ -60,20 +60,152 @@ http://localhost:5000/player-info?uid=1844109412
 {
   "basicInfo": {
     "accountId": "1844109412",
+    "accountType": 1,
     "nickname": "ᗅsʜɪsʜ",
     "region": "IND",
     "level": 69,
-    "rank": 326
+    "exp": 2650226,
+    "bannerId": 901000012,
+    "headPic": 902000004,
+    "rank": 326,
+    "rankingPoints": 7040,
+    "badgeCnt": 35,
+    "badgeId": 1001000095,
+    "seasonId": 50,
+    "liked": 46598,
+    "showRank": true,
+    "lastLoginAt": "1776152501",
+    "csRank": 318,
+    "csRankingPoints": 76,
+    "weaponSkinShows": [
+      907103429,
+      912000001
+    ],
+    "pinId": 910000005,
+    "maxRank": 326,
+    "csMaxRank": 318,
+    "accountPrefers": {
+      "brPregameShowChoices": [
+        1
+      ]
+    },
+    "createAt": "1584203139",
+    "title": 904090026,
+    "externalIconInfo": {
+      "status": "ExternalIconStatus_NOT_IN_USE",
+      "showType": "ExternalIconShowType_FRIEND"
+    },
+    "releaseVersion": "OB53",
+    "showBrRank": true,
+    "showCsRank": true,
+    "socialHighLightsWithBasicInfo": {}
+  },
+  "profileInfo": {
+    "avatarId": 102000004,
+    "skinColor": 100,
+    "clothes": [
+      203000253,
+      214000023,
+      204000692,
+      205000157,
+      211000196
+    ],
+    "equipedSkills": [
+      16,
+      5601,
+      8,
+      1,
+      16,
+      2506,
+      8,
+      2,
+      16,
+      7506,
+      8,
+      3,
+      16,
+      5301
+    ],
+    "isSelected": true,
+    "isSelectedAwaken": true
   },
   "clanBasicInfo": {
-    "clanName": "URxFF"
+    "clanId": "3037909598",
+    "clanName": "URxFF",
+    "captainId": "1844109412",
+    "clanLevel": 6,
+    "capacity": 55,
+    "memberNum": 49
+  },
+  "captainBasicInfo": {
+    "accountId": "1844109412",
+    "accountType": 1,
+    "nickname": "ᗅsʜɪsʜ",
+    "region": "IND",
+    "level": 69,
+    "exp": 2650226,
+    "bannerId": 901000012,
+    "headPic": 902000004,
+    "rank": 326,
+    "rankingPoints": 7040,
+    "badgeCnt": 35,
+    "badgeId": 1001000095,
+    "seasonId": 50,
+    "liked": 46598,
+    "showRank": true,
+    "lastLoginAt": "1776152501",
+    "csRank": 318,
+    "csRankingPoints": 76,
+    "weaponSkinShows": [
+      907103429,
+      912000001
+    ],
+    "pinId": 910000005,
+    "maxRank": 326,
+    "csMaxRank": 318,
+    "accountPrefers": {
+      "brPregameShowChoices": [
+        1
+      ]
+    },
+    "createAt": "1584203139",
+    "title": 904090026,
+    "externalIconInfo": {
+      "status": "ExternalIconStatus_NOT_IN_USE",
+      "showType": "ExternalIconShowType_FRIEND"
+    },
+    "releaseVersion": "OB53",
+    "showBrRank": true,
+    "showCsRank": true,
+    "socialHighLightsWithBasicInfo": {}
+  },
+  "petInfo": {
+    "id": 1300000125,
+    "level": 4,
+    "exp": 540,
+    "isSelected": true,
+    "skinId": 1310000252,
+    "selectedSkillId": 1315000024
+  },
+  "socialInfo": {
+    "accountId": "1844109412",
+    "language": "Language_EN",
+    "signature": "[B][C][0088CC]YT/TG:   @Unknown_Reason",
+    "rankShow": "RankShow_CS"
+  },
+  "diamondCostRes": {
+    "diamondCost": 390
+  },
+  "creditScoreInfo": {
+    "creditScore": 100,
+    "periodicSummaryEndTime": "1776000951"
   }
 }
 ```
 
 ---
 
-## ⚙️ 🛠 Installation & Setup
+## ⚙️ 🛠 Terminal Installation & Setup
 
 ### 1️⃣ Clone Repository
 
