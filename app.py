@@ -14,23 +14,17 @@ from google.protobuf.message import Message
 from Crypto.Cipher import AES
 import base64
 
-# === Settings ===
-
 MAIN_KEY = base64.b64decode('WWcmdGMlREV1aDYlWmNeOA==')
 MAIN_IV = base64.b64decode('Nm95WkRyMjJFM3ljaGpNJQ==')
 RELEASEVERSION = "OB53"
 USERAGENT = "Dalvik/2.1.0 (Linux; U; Android 13; CPH2095 Build/RKQ1.211119.001)"
 SUPPORTED_REGIONS = {"IND", "BR", "US", "SAC", "NA", "SG", "RU", "ID", "TW", "VN", "TH", "ME", "PK", "CIS", "BD", "EUROPE"}
 
-# === Flask App Setup ===
-
 app = Flask(__name__)
 CORS(app)
 cache = TTLCache(maxsize=100, ttl=300)
 cached_tokens = defaultdict(dict)
 uid_region_cache = {}
-
-# === Helper Functions ===
 
 def pad(text: bytes) -> bytes:
     padding_length = AES.block_size - (len(text) % AES.block_size)
@@ -57,8 +51,6 @@ def get_account_credentials(region: str) -> str:
         return "uid=ENTER_YOU_GUEST_ACCOUNT_UID&password=ENTER_YOUR_GUEST_ACCOUNT_PASSWORD"
     else:
         return "uid=ENTER_YOU_GUEST_ACCOUNT_UID&password=ENTER_YOUR_GUEST_ACCOUNT_PASSWORD"
-
-# === Token Generation ===
 
 async def get_access_token(account: str):
     url = "https://ffmconnect.live.gop.garenanow.com/oauth/guest/token/grant"
@@ -118,8 +110,6 @@ async def GetAccountInformation(uid, unk, region, endpoint):
         resp = await client.post(server+endpoint, data=data_enc, headers=headers)
         return json.loads(json_format.MessageToJson(decode_protobuf(resp.content, AccountPersonalShow_pb2.AccountPersonalShowInfo)))
 
-# === Caching Decorator ===
-
 def cached_endpoint(ttl=300):
     def decorator(fn):
         @wraps(fn)
@@ -133,8 +123,6 @@ def cached_endpoint(ttl=300):
         return wrapper
     return decorator
 
-# === Flask Routes ===
-
 @app.route('/player-info')
 @cached_endpoint()
 def get_account_info():
@@ -142,14 +130,13 @@ def get_account_info():
     if not uid:
         return jsonify({"error": "Please provide UID."}), 400
 
-    # Check cached region for UID
     if uid in uid_region_cache:
         try:
             return_data = asyncio.run(GetAccountInformation(uid, "7", uid_region_cache[uid], "/GetPlayerPersonalShow"))
             formatted_json = json.dumps(return_data, indent=2, ensure_ascii=False)
             return formatted_json, 200, {'Content-Type': 'application/json; charset=utf-8'}
         except:
-            pass  # fallback to testing all regions
+            pass  
 
     for region in SUPPORTED_REGIONS:
         try:
@@ -169,8 +156,6 @@ def refresh_tokens_endpoint():
         return jsonify({'message':'Tokens refreshed for all regions.'}),200
     except Exception as e:
         return jsonify({'error': f'Refresh failed: {e}'}),500
-
-# === Startup ===
 
 async def startup():
     await initialize_tokens()
